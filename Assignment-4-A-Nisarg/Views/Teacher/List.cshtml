@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Assignment_4_A_Nisarg.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<div id="containerlist">
+    <nav>
+        <a class="navlink" href="/Teacher/New">New Teacher</a>
+    </nav>
+    <h2>List of Teachers</h2>
+    @foreach (var teacher in Model)
+    {
+        <div class="listitem row">
+            <!-- Dislpay teacher's name-->
+            <div class="col-md-12"><a href="/Teacher/Show/@teacher.TeacherId">  @teacher.TeacherFname @teacher.TeacherLname </a></div>
+        </div>
+
+    }
+</div>

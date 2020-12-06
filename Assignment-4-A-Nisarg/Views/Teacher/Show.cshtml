@@ -1,0 +1,18 @@
+﻿@model Assignment_4_A_Nisarg.Models.Teacher
+@{
+    ViewBag.Title = "Show";
+}
+
+<a class="navlink" href="/Teacher/List">Back To Teachers' List</a>
+<a class="dellink" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
+<div id="containershow">
+
+    <!-- Dislpay teacher's details-->
+
+    <h2>@Model.TeacherFname @Model.TeacherLname</h2>
+    <p><b>Employee Number:</b> @Model.EmployeeNumber</p>
+    <p><b>Hire Date:</b> @Model.HireDate</p>
+    <p><b>Salary:</b> @Model.Salary</p>
+  
+
+</div>

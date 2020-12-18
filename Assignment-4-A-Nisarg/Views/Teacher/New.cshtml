@@ -1,5 +1,10 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "New";
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/InputValidation.js")"></script>
 }
 
 
@@ -8,11 +13,11 @@
         <a class="navlink" href="/Teacher/List">Back To Teachers' List</a>
     </nav>
     <h2>New Teacher</h2>
-@*    form with input validation
-*@    <form method="POST" action="/Teacher/Create">
+    @*    form with input validation
+    *@    <form id="myForm2" method="POST" action="/Teacher/Create" onsubmit="myFunction()">
         <div class="inputrow">
             <label for="TeacherFname">First Name:</label>
-            <input type="text" id="TeacherFname" name="TeacherFname" required/>
+            <input type="text" id="TeacherFname" name="TeacherFname" required />
 
         </div>
         <div class="inputrow">
@@ -29,13 +34,16 @@
             <label for="HireDate">Hire Date:</label>
             <input type="date" id="HireDate" name="HireDate" required />
         </div>
-@*        step="0.01" is used for input with 2 decimal places
-*@        <div class="inputrow">
+        @*        step="0.01" is used for input with 2 decimal places
+        *@        <div class="inputrow">
             <label for="Salary">Salary:</label>
-            <input type="number" step="0.01" id="Salary" name="Salary" required />
+            <input type="number" step="0.01" id="Salary" name="Salary" required/>
         </div>
         <div class="inputrow">
             <input type="submit" value="Create Teacher" />
         </div>
     </form>
+    <h2 id="hidden">
+        Teacher added succesfully!
+    </h2>
 </div>

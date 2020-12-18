@@ -1,0 +1,51 @@
+﻿@model Assignment_4_A_Nisarg.Models.Teacher
+@{
+    ViewBag.Title = "Update";
+}
+@*INITIATIVE
+*@@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/InputValidation.js")"></script>
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/Show/@Model.TeacherId">Back To Teachers' List</a>
+    </nav>
+    <h2>Update Teacher</h2>
+    @*    form with input validation
+    *@    <form id="myForm" method="POST" action="/Teacher/Update/@Model.TeacherId" onsubmit="myFunction()">
+        <div class="inputrow">
+            <label for="TeacherFname">First Name:</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" value="@Model.TeacherFname" required />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherLname">Last Name:</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" value="@Model.TeacherLname" required />
+
+        </div>
+        <div class="inputrow">
+            <label for="EmployeeNumber">Employee Number:</label>
+            <input type="text" id="EmployeeNumber" name="EmployeeNumber" value="@Model.EmployeeNumber" required />
+        </div>
+
+        <div class="inputrow">
+            <label for="HireDate">Hire Date:</label>
+            @*            used asp-format to display the date
+            *@          <input asp-for="MyDate" asp-format="{0:dd/MM/yyyy}" class="form-control" id="HireDate" name="HireDate" value="@Model.HireDate" required />
+        </div>
+        @*        step="0.01" is used for input with 2 decimal places
+        *@        <div class="inputrow">
+            <label for="Salary">Salary:</label>
+            <input type="number" step="0.01" id="Salary" name="Salary" value="@Model.Salary" required />
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Update Teacher" />
+        </div>
+    </form>
+    <h2 id="hidden">
+        Teacher updated succesfully!
+    </h2>
+</div>
+

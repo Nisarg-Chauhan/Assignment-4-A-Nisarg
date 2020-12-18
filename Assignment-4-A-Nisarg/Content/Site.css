@@ -12,8 +12,13 @@
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
-textarea {
+textarea,
+{
     max-width: 280px;
+}
+
+#HireDate{
+    width: 180px;
 }
 
 nav {
@@ -23,6 +28,7 @@ nav {
 
 .navlink {
     float: left;
+    margin-right: 15px;
 }
 
 .dellink {
@@ -69,3 +75,6 @@ nav {
         float: none;
         margin-top: 50px;
     }
+#hidden{
+    visibility: hidden;
+}
